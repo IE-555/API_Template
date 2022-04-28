@@ -62,11 +62,12 @@ plt.xticks([1, 2, 3, 4, 5, 6], ['mean', 'min', '25%', '50%', '75%', 'max' ])
 plt.title('Jobs Information')
 plt.xlabel('General Statistics')
 plt.ylabel('Salary')
-```
+
+---
 
 The output from this code is shown below:
 
-![image_plot](images/PRANAVPI_SAMIRMIC_payrollNYC/images/salary_info.PNG)
+![image_plot](images/salary_info.PNG)
 
 
 ---
