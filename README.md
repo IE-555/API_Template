@@ -4,11 +4,7 @@ Authors:  Somit Desai , Sumanth Reddy, Vineeth Reddy Tati and Anirudh Varma
 
 ---
 
-
----
-
 ## Introduction
-*The purpose of this section is to provide some information about the data you're exploring.  For example, you should*
 - We import F1 race data in .JSON format. 
 - The data is fetched using requests from [F1 MRD Repo](http://ergast.com/mrd/)  
 - This data is very recent and is updated every race.
@@ -16,7 +12,7 @@ Authors:  Somit Desai , Sumanth Reddy, Vineeth Reddy Tati and Anirudh Varma
 ---
 
 ## Sources
-*In this section, provide links to your references.  For example:*
+
 - The code retrieves data from [F1 MRD Repo](http://ergast.com/mrd/)
 - Numpy documentation [Documentation](https://numpy.org/doc/stable/index.html)
 - Plotly documentation [Documentation](https://plotly.com/python/)
@@ -24,8 +20,6 @@ Authors:  Somit Desai , Sumanth Reddy, Vineeth Reddy Tati and Anirudh Varma
 ---
 
 ## Explanation of the Code
-*In this section you should provide a more detailed explanation of what, exactly, the above code actually does.  Your classmates should be able to read your explanation and understand what is happening in the code.*
-
 The code, `vineethr_syeruva_somitdes_apenumet_f1data.py`, begins by importing necessary Python packages:
 ```
 import requests
@@ -37,17 +31,6 @@ Plotly can be installed through PIP with the following command:
 ```
 pip install plotly
 ```
-
-We then import data from [insert name of data source].  We print the data to allow us to verify what we've imported:
-```
-x = [1, 3, 4, 7]
-y = [2, 5, 1, 6]
-
-for i in range(0,len(x)):
-	print "x[%d] = %f" % (i, x[i])		
-```
-- *NOTE 1:  This sample code doesn't actually import anything.  You'll need your code to grab live data from an online source.*  
-- *NOTE 2:  You will probably also need to clean/filter/re-structure the raw data.  Be sure to include that step.*
 
 We then use requests to fetch data from the online data repo:
 ```
@@ -70,11 +53,13 @@ second_unique, second_counts = np.unique(second, return_counts=True)
 third_unique, third_counts = np.unique(third, return_counts=True)
 ```
 
-Finally, we visualize the data.  We save our plot as a `.png` image:
+Finally, we visualize the data.  We render our plot in the browser using:
 ```
-plt.plot(x, y)
-plt.savefig('samplefigure.png')	
-plt.show()
+fig = go.Figure()
+fig.add_bar(x=drivers, y=p1, name="First")
+fig.add_bar(x=drivers, y=p2, name="Second")
+fig.add_bar(x=drivers, y=p3, name="Third")
+fig.show()
 ```
 
 The output from this code is shown below:
@@ -84,7 +69,6 @@ The output from this code is shown below:
 ---
 
 ## How to Run the Code
-*Provide step-by-step instructions for running the code.  For example, I like to run code from the terminal:*
 1. Open a terminal window.
 
 2. Change directories to where `vineethr_syeruva_somitdes_apenumet_f1data.py` is saved.
@@ -93,10 +77,8 @@ The output from this code is shown below:
 	```
 	python vineethr_syeruva_somitdes_apenumet_f1data.py
 	```
-
-- *NOTE: You are welcome to provide instructions using Anaconda or IPython.*
-
 ---
 
 ## Suggestions
-*Finally, you should suggest any additional features that would be useful/interesting.  For example, what else could you do with these data?  How might you want to modify the plot to be more descriptive?  What summary statistics might you want to calculate with these data?*
+
+For future work, it would be better if we can categorize by teams and then graph how the races have won team wise. Maybe adding a dynamic element by choosing specific races or courses. This would help us understand if there is a correlation between certain racetracks and team wins for example.
