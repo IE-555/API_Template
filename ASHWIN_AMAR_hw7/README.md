@@ -85,6 +85,10 @@ The output from this code is shown below:
 
 ![Image of Plot](images/Arrival_Frequency.png)
 
+The above graphs showcase the change in flight frequencies. **Graph 1** indicates the change in arrival frequency over the time period of the last hour, while **Graph 2** indicates the change in departure frequency.
+
+We also thought it would be useful to highlight the change in flight frequencies for flights en route (**Graph 3**) and scheduled to depart (**Graph 4**).
+
 ---
 
 Please find the video linked as an explanation: https://youtu.be/6QpoSpftx3M
