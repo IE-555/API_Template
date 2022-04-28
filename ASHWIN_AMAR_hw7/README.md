@@ -27,7 +27,7 @@ The website constantly updates the table for each type on refreshing which inclu
 ## Explanation of the Code
 
 
-1) Data importing
+1. Data importing
 The code, Live_flight_HW7.py, begins by importing necessary Python packages: 
 
 import pandas as pd
@@ -44,7 +44,7 @@ We then concatenate arrival, departure, enroute & scheduled flight departure tab
 jfk = pd.concat(jfk, axis=1, ignore_index=False)
 jfk
 	
-2) Data cleaning
+2. Data cleaning
 The dataframe included few non-productive columns which needed to be dropped from the dataframe.
 jfk1 = jfk.drop(jfk.columns[[1,3,4,7,10,11,13,15,16,19,22,23,24]], axis=1)
 
@@ -55,7 +55,7 @@ We renamed the columns for readabiity
 jfk1.columns = ['ArrivalFlightNo', 'ArrivalFrom', 'ArrivalTime', 'DeptFlightNo', 'DeptTo', 'DeptTime', 'EnrouteFlightNo','EnrouteFrom','EnrouteArrivalTime','SchDeptFlightNo','SchDeptTo','SchDeptTime']
 jfk1	
 
-3) Data analysis
+3. Data analysis
 For a given hour, we checked the number of aircrafts on ground, which could help us in determining the congestion
 This was calculated by deducting (number of flights departed in last 45mins) from (number of flights arrived in last 30mins which have not departed yet and not scheduled to depart for the next 30mins) 
 
@@ -96,6 +96,6 @@ Press Ctrl + Enter or Run icon at each cell in a orderly fashion
 ## Suggestions
 
 Finally, we suggest additional features that would be useful/interesting-
-1) Data showing difference in estimated arrival/departure and actual arrival/departure, could help us plot flight delays
-2) Reasons for delays, frequency of each delay type could help perform root cause analysis of delays
-3) Gate location of each flight, to identify the occupied gates & avoid potential runway bloackage due to gate unavailability for enroute flights
+1. Data showing difference in estimated arrival/departure and actual arrival/departure, could help us plot flight delays
+2. Reasons for delays, frequency of each delay type could help perform root cause analysis of delays
+3. Gate location of each flight, to identify the occupied gates & avoid potential runway bloackage due to gate unavailability for enroute flights
