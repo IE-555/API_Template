@@ -408,7 +408,7 @@ plt.ylabel('Genre',fontsize=15)
 
 
     
-![png](output_12_0.png)
+![png](WJMICHAL_KARANNIM_movies/output_12_0.png)
     
 
 
@@ -425,7 +425,7 @@ plt.ylabel('Density',fontsize=15)
 
 
     
-![png](output_14_0.png)
+![png](WJMICHAL_KARANNIM_movies/output_14_0.png)
     
 
 
@@ -446,7 +446,7 @@ plt.ylabel('Gross Revenue In Billions (USD)',fontsize=15)
 
 
     
-![png](output_16_1.png)
+![png](WJMICHAL_KARANNIM_movies/output_16_1.png)
     
 
 
@@ -464,7 +464,7 @@ plt.ylabel('Votes',fontsize=15)
 
 
     
-![png](output_18_0.png)
+![png](WJMICHAL_KARANNIM_movies/output_18_0.png)
     
 
 
