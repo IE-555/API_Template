@@ -390,7 +390,7 @@ plt.ylabel('Gross Revenue In Millions (USD)',fontsize=15)
 
 
     
-![png](output_10_0.png)
+![png](WJMICHAL_KARANNIM_movies/output_10_0.png)
     
 
 
