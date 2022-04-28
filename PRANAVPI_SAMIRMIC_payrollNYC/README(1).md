@@ -66,7 +66,7 @@ plt.ylabel('Salary')
 
 The output from this code is shown below:
 
-![image of plot](images/salary_info.PNG)
+![image](images/barplotboroughgross.png)
 
 ---
 
