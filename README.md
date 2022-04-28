@@ -2,6 +2,9 @@
 
 **Authors: Karan Nimmagadda & Walter MIchalski** 
 
+Video:
+https://www.youtube.com/watch?v=9wUYSFZoizs
+
 # Introduction
 
 Is the movie business truly coming to an end? notwithstanding the presence of OTT rivals with all of the over-the-top entertainment, many of us wonder if the movie business is on the verge of collapsing. To determine if the business is truly fading or not, we analyzed and visualized data spanning four decades. We imported a data set from Kaggle (https://www.kaggle.com/datasets/danielgrijalvas/movies) with roughly 5400 movies over a 40-year period (1980-2020) and contains the following attributes:
