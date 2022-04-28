@@ -43,6 +43,14 @@ We validate that the data is right by printing it out and checking it:
 print(f"Year: {temp_year}, Race: {data['Circuit']['circuitName']}")
 print(f"{x['position']}.{x['Driver']['givenName']} {x['Driver']['familyName']}")
 ```
+This should give us a result like:
+```
+Year: 2019, Race: Albert Park Grand Prix Circuit
+1.Valtteri Bottas 
+2.Lewis Hamilton 
+3.Max Verstappen 
+
+```
 The data then needs to be filtered and sepearated into useful data before we start visualizing it. This is done with the help of 
 Numpy:
 
