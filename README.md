@@ -1,6 +1,6 @@
 # Plotting F1 Grand Prix podium wins with the help of APIs
 
-Authors:  Somit Desai , Sumanth Reddy, Vineeth Reddy Tati and Anirudh Varma \n
+Authors:  Somit Desai , Sumanth Reddy, Vineeth Reddy Tati and Anirudh Varma \
 Presentation: [Video](https://youtu.be/ggz6moRPRy4)
 
 ---
