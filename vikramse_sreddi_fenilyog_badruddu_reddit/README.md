@@ -1,6 +1,6 @@
 # Reddit Application API 
 
-Authors:  **Vikram Segaran**, **Sai Krishna Reddi**, **Fenil**, **Badru**
+Authors:  **Vikram Segaran**, **Sai Krishna Reddi**, **Fenil Manani**, **Badrudduja Khan**
 
 ---
 
