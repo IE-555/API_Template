@@ -66,7 +66,7 @@ plt.ylabel('Salary')
 
 The output from this code is shown below:
 
-![Salary Info][/PRANAVPI_SAMIRMIC_payrollNYC/Salary Info.PNG)
+![Salary Info][/PRANAVPI_SAMIRMIC_payrollNYC/salary_info.PNG)
 
 ---
 
