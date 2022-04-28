@@ -1,4 +1,4 @@
-                                      ##Quality of Life in Urban Areas##
+                                      Quality of Life in Urban Areas
 
 Authors: Abdul Aziz, Parth Dilip Parmar, Shaunak Shripad Thuse, Swapnil Sanjiv Bambale
 
