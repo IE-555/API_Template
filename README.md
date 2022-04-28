@@ -38,7 +38,11 @@ my_base_url = "http://ergast.com/api/f1/" + str(temp_year) + "/1/results.json"
 response = requests.get(my_base_url)
 data = response.json()['MRData']['RaceTable']['Races'][0]
 ```
-
+We validate that the data is right by printing it out and checking it:
+```
+print(f"Year: {temp_year}, Race: {data['Circuit']['circuitName']}")
+print(f"{x['position']}.{x['Driver']['givenName']} {x['Driver']['familyName']}")
+```
 The data then needs to be filtered and sepearated into useful data before we start visualizing it. This is done with the help of 
 Numpy:
 
