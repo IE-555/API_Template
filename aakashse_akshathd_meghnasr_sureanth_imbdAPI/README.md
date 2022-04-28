@@ -9,6 +9,8 @@ Authors:  **Aakash Sekar**, **Akshath Dasarathy**, **Meghna Sriram** and **Surea
 ## Introduction
 
 IMDb (Internet Movie Database) is an online database that includes cast, production crew, and personal biographies, story summaries, trivia, ratings, and fan and critical reviews for films, television programs, home videos, video games, and streaming entertainment online. IMDb originated as a user-run movie database on the Usenet group "rec.arts.movies," then later, it was brought to the web. IMDb.com, Inc., an Amazon subsidiary, now owns and operates it. We have used this data to make various manipulation and create some meaningful visualizations. 
+
+**Youtube Link:** https://youtu.be/8GHUmIzz-p8
 ---
 
 ## Sources
