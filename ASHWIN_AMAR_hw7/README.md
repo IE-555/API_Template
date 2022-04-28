@@ -87,6 +87,8 @@ The output from this code is shown below:
 
 ---
 
+Please find the video linked as an explanation: https://youtu.be/6QpoSpftx3M
+
 ## How to Run the Code
 
 We ran the code in Jupyter Notebook
