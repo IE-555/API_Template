@@ -1,54 +1,66 @@
-# Write a Brief Descriptive Title Here
+# NYC Payroll Analysis
 
-Authors:  **Name 1** and **Name 2**
+Authors:  Pranav Pillai and Samir Nino
 
----
-
-**NOTE**:  The *italicized* content below is for your reference only.  Please remove these comments before submitting.
 
 ---
 
 ## Introduction
-*The purpose of this section is to provide some information about the data you're exploring.  For example, you should*
-- *Describe the type of data that you're importing.* 
-- *Describe the source of the data.  Include URLs.*  
-- *Explain how recent is this data?  How often is it updated?*
+
+- This data consists of some of the information about the payrolls of Admin for Children's Services in NYC
+- The source of this data is the new york city open data - https://data.cityofnewyork.us/resource/k397-673e.json  
+- This data is as recent as the fiscal year 2021, and it is updated every fiscal year
 
 ---
 
 ## Sources
-*In this section, provide links to your references.  For example:*
-- The source code came from [the magic source code farm](http://www.amagicalnonexistentplace.com)
-- The code retrieves data from [the organization for hosting cool data](http://www.anothermagicalnonexistentplace.com)
+
+- The source code came from https://data.cityofnewyork.us/resource/k397-673e.json 
 
 ---
 
 ## Explanation of the Code
-*In this section you should provide a more detailed explanation of what, exactly, the above code actually does.  Your classmates should be able to read your explanation and understand what is happening in the code.*
 
-The code, `needs_a_good_name.py`, begins by importing necessary Python packages:
+The code, `pranavpi_samirmic_payrollnyc.py`, begins by importing necessary Python packages:
 ```
-import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import json
+import urllib.request
+import matplotlib.pyplot as plt 
 ```
 
-- *NOTE:  If a package does not come pre-installed with Anaconda, you'll need to provide instructions for installing that package here.*
+We then import data from https://data.cityofnewyork.us/resource/k397-673e.json.  We print the data to allow us to verify what we've imported:
 
-We then import data from [insert name of data source].  We print the data to allow us to verify what we've imported:
 ```
-x = [1, 3, 4, 7]
-y = [2, 5, 1, 6]
+	fiscal_year	payroll_number	agency_name	last_name	first_name	mid_init	agency_start_date	work_location_borough	title_description	leave_status_as_of_july_31	base_salary	pay_basis	regular_hours	regular_gross_paid	ot_hours	total_ot_paid	total_other_pay
+0	2021	67	ADMIN FOR CHILDREN'S SVCS	HERNANDEZ	HILARY	M	2018-10-29T00:00:00.000	BRONX	CHILD PROTECTIVE SPECIALIST	ACTIVE	60327.0	per Annum	1820.0	59607.00	256.25	10285.72	1027.87
+1	2021	67	ADMIN FOR CHILDREN'S SVCS	BLACKWELL	CATHY	NaN	2018-10-29T00:00:00.000	MANHATTAN	CHILD PROTECTIVE SPECIALIST	ON LEAVE	60327.0	per Annum	1484.0	48500.19	43.75	1632.34	780.31
+2	2021	67	ADMIN FOR CHILDREN'S SVCS	WILLIAMS	FRANCICA	C	2006-04-10T00:00:00.000	BROOKLYN	CHILD PROTECTIVE SPECIALIST SUPERVISOR	ACTIVE	88627.0	per Annum	1820.0	88377.50	0.00	0.00	4245.78
+3	2021	67	ADMIN FOR CHILDREN'S SVCS	DRUMGOLD	CHERYL D	NaN	1996-06-23T00:00:00.000	MANHATTAN	PRINCIPAL ADMINISTRATIVE ASSOCIATE - NON SUPVR	ACTIVE	67639.0	per Annum	1820.0	66862.72	0.00	0.00	4312.46
+4	2021	67	ADMIN FOR CHILDREN'S SVCS	ADANRI	DONALD	A	2018-08-06T00:00:00.000	BROOKLYN	COMMUNITY COORDINATOR	ACTIVE	62215.0	per Annum	1820.0	60790.26	19.00	639.11	1800.57		
+```
+We filter the data by organizing the time units correctly and deleting unnecessary columns.
 
-for i in range(0,len(x)):
-	print "x[%d] = %f" % (i, x[i])		
 ```
-- *NOTE 1:  This sample code doesn't actually import anything.  You'll need your code to grab live data from an online source.*  
-- *NOTE 2:  You will probably also need to clean/filter/re-structure the raw data.  Be sure to include that step.*
+del df["payroll_number"]
+del df["last_name"]
+del df["first_name"]
+del df["mid_init"]
+del df["pay_basis"]
+df['agency_start_date'] = pd.to_datetime(df['agency_start_date']).dt.year
+
 
 Finally, we visualize the data.  We save our plot as a `.png` image:
 ```
-plt.plot(x, y)
-plt.savefig('samplefigure.png')	
-plt.show()
+jobs_description = df.groupby(['title_description'])['base_salary'].describe()
+del jobs_description['count']
+del jobs_description['std']
+plt.boxplot(jobs_description)
+plt.xticks([1, 2, 3, 4, 5, 6], ['mean', 'min', '25%', '50%', '75%', 'max' ])
+plt.title('Jobs Information')
+plt.xlabel('General Statistics')
+plt.ylabel('Salary')
 ```
 
 The output from this code is shown below:
@@ -57,20 +69,38 @@ The output from this code is shown below:
 
 ---
 
+
+The output from this code is shown below:
+
+![Salary Info][images/salary info.png)
+
+---
+
 ## How to Run the Code
 *Provide step-by-step instructions for running the code.  For example, I like to run code from the terminal:*
 1. Open a terminal window.
 
-2. Change directories to where `needs_a_good_name.py` is saved.
+2. Change directories to where `pranavpi_samirmic_payrollnyc.py` is saved.
 
 3. Type the following command:
 	```
-	python needs_a_good_name.py
+	python pranavpi_samirmic_payrollnyc.py
 	```
 
-- *NOTE: You are welcome to provide instructions using Anaconda or IPython.*
 
 ---
 
-## Suggestions
-*Finally, you should suggest any additional features that would be useful/interesting.  For example, what else could you do with these data?  How might you want to modify the plot to be more descriptive?  What summary statistics might you want to calculate with these data?*
+Suggestions
+
+This data can be combined with historical data to show trends and forecasting into the future. We also just considered a small sample size and deemed some features as irrelevant to our current study, with more information, there could be more in depth analysis using different methods to help us better understand the historical data and predict future ones. The dataset contains only payroll for people employed in 2021 in Admin for Childrens' Services in New York City. If we use previous year's data or if we use different organizations or compare it to New York City as a whole, we can make a more in-depth comparision and data visualization such as violin plots.
+
+
+Video Link:
+
+
+https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=054b0a34-c046-4589-9474-ae8500f90198
+
+
+
+
+
