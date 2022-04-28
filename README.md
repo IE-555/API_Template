@@ -63,16 +63,10 @@ plt.xlabel('General Statistics')
 plt.ylabel('Salary')
 ```
 
-The output from this code is shown below:
-
-![Image of Plot](images/samplefigure.png)
-
----
-
 
 The output from this code is shown below:
 
-![Salary Info][images/salary info.png)
+![Salary Info][images/Salary Info.png)
 
 ---
 
