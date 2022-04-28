@@ -1,34 +1,36 @@
 # Write a Brief Descriptive Title Here
 
-Authors:  **Name 1** and **Name 2**
+Authors:  Somit Desai , Sumanth Reddy, Vineeth Reddy Tati and Anirudh Varma
 
 ---
 
-**NOTE**:  The *italicized* content below is for your reference only.  Please remove these comments before submitting.
 
 ---
 
 ## Introduction
 *The purpose of this section is to provide some information about the data you're exploring.  For example, you should*
-- *Describe the type of data that you're importing.* 
-- *Describe the source of the data.  Include URLs.*  
-- *Explain how recent is this data?  How often is it updated?*
+- We import F1 race data in .JSON format. 
+- The data is fetched using requests from [F1 MRD Repo](http://ergast.com/mrd/)  
+- This data is very recent and is update every race.
 
 ---
 
 ## Sources
 *In this section, provide links to your references.  For example:*
-- The source code came from [the magic source code farm](http://www.amagicalnonexistentplace.com)
-- The code retrieves data from [the organization for hosting cool data](http://www.anothermagicalnonexistentplace.com)
+- The code retrieves data from [F1 MRD Repo](http://ergast.com/mrd/)
+- Numpy documentation [Documentation](https://numpy.org/doc/stable/index.html)
+- Plotly documentation [Documentation](https://plotly.com/python/)
 
 ---
 
 ## Explanation of the Code
 *In this section you should provide a more detailed explanation of what, exactly, the above code actually does.  Your classmates should be able to read your explanation and understand what is happening in the code.*
 
-The code, `needs_a_good_name.py`, begins by importing necessary Python packages:
+The code, `vineethr_syeruva_somitdes_apenumet_f1data.py`, begins by importing necessary Python packages:
 ```
-import matplotlib.pyplot as plt
+import requests
+import numpy as np
+import plotly.graph_objects as go
 ```
 
 - *NOTE:  If a package does not come pre-installed with Anaconda, you'll need to provide instructions for installing that package here.*
@@ -61,11 +63,11 @@ The output from this code is shown below:
 *Provide step-by-step instructions for running the code.  For example, I like to run code from the terminal:*
 1. Open a terminal window.
 
-2. Change directories to where `needs_a_good_name.py` is saved.
+2. Change directories to where `vineethr_syeruva_somitdes_apenumet_f1data.py` is saved.
 
 3. Type the following command:
 	```
-	python needs_a_good_name.py
+	python vineethr_syeruva_somitdes_apenumet_f1data.py
 	```
 
 - *NOTE: You are welcome to provide instructions using Anaconda or IPython.*
