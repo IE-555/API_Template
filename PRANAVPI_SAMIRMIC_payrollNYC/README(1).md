@@ -66,7 +66,7 @@ plt.ylabel('Salary')
 
 The output from this code is shown below:
 
-![Image of Plot](/images/salary_info.PNG)
+![Image of Plot](images/salary_info.PNG)
 
 ---
 
