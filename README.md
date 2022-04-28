@@ -11,7 +11,7 @@ Authors:  Somit Desai , Sumanth Reddy, Vineeth Reddy Tati and Anirudh Varma
 *The purpose of this section is to provide some information about the data you're exploring.  For example, you should*
 - We import F1 race data in .JSON format. 
 - The data is fetched using requests from [F1 MRD Repo](http://ergast.com/mrd/)  
-- This data is very recent and is update every race.
+- This data is very recent and is updated every race.
 
 ---
 
@@ -33,7 +33,10 @@ import numpy as np
 import plotly.graph_objects as go
 ```
 
-- *NOTE:  If a package does not come pre-installed with Anaconda, you'll need to provide instructions for installing that package here.*
+Plotly can be installed through PIP with the following command:
+```
+pip install plotly
+```
 
 We then import data from [insert name of data source].  We print the data to allow us to verify what we've imported:
 ```
@@ -45,6 +48,27 @@ for i in range(0,len(x)):
 ```
 - *NOTE 1:  This sample code doesn't actually import anything.  You'll need your code to grab live data from an online source.*  
 - *NOTE 2:  You will probably also need to clean/filter/re-structure the raw data.  Be sure to include that step.*
+
+We then use requests to fetch data from the online data repo:
+```
+my_base_url = "http://ergast.com/api/f1/" + str(temp_year) + "/1/results.json"
+response = requests.get(my_base_url)
+data = response.json()['MRData']['RaceTable']['Races'][0]
+```
+
+The data then needs to be filtered and sepearated into useful data before we start visualizing it. This is done with the help of 
+Numpy:
+
+```
+
+first = np.array(first_raw)
+second = np.array(second_raw)
+third = np.array(third_raw)
+
+first_unique, first_counts = np.unique(first, return_counts=True)
+second_unique, second_counts = np.unique(second, return_counts=True)    
+third_unique, third_counts = np.unique(third, return_counts=True)
+```
 
 Finally, we visualize the data.  We save our plot as a `.png` image:
 ```
