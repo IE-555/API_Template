@@ -49,13 +49,11 @@ Year: 2019, Race: Albert Park Grand Prix Circuit
 1.Valtteri Bottas 
 2.Lewis Hamilton 
 3.Max Verstappen 
-
 ```
 The data then needs to be filtered and sepearated into useful data before we start visualizing it. This is done with the help of 
 Numpy:
 
 ```
-
 first = np.array(first_raw)
 second = np.array(second_raw)
 third = np.array(third_raw)
