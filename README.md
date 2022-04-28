@@ -1,76 +1,94 @@
-# Write a Brief Descriptive Title Here
+# Reddit Application API 
 
-Authors:  **Name 1** and **Name 2**
+Authors:  **Vikram Segaran**, **Sai Krishna Reddi**, **Fenil**, **Badru**
 
 ---
-
-**NOTE**:  The *italicized* content below is for your reference only.  Please remove these comments before submitting.
 
 ---
 
 ## Introduction
-*The purpose of this section is to provide some information about the data you're exploring.  For example, you should*
-- *Describe the type of data that you're importing.* 
-- *Describe the source of the data.  Include URLs.*  
-- *Explain how recent is this data?  How often is it updated?*
+- We are using live data from the application called Reddit.
+- Reddit is an American social news aggregation, web content rating, and discussion website. Registered members submit content to the site such as links, text posts,   images, and videos, which are then voted up or down by other members
+- We are collecting and saving reddit data using reddit API through praw library
+- https://praw.readthedocs.io/en/stable/#getting-started
+- The data is updated every time 30 seconds
 
 ---
 
 ## Sources
-*In this section, provide links to your references.  For example:*
-- The source code came from [the magic source code farm](http://www.amagicalnonexistentplace.com)
-- The code retrieves data from [the organization for hosting cool data](http://www.anothermagicalnonexistentplace.com)
+- The Praw library website : https://praw.readthedocs.io/en/stable/#getting-started
+- We took references from few websites: 
+- https://www.geeksforgeeks.org/python-praw-python-reddit-api-wrapper/
+- https://www.youtube.com/watch?v=NRgfgtzIhBQ
+- https://seaborn.pydata.org/index.html
 
 ---
 
 ## Explanation of the Code
-*In this section you should provide a more detailed explanation of what, exactly, the above code actually does.  Your classmates should be able to read your explanation and understand what is happening in the code.*
 
-The code, `needs_a_good_name.py`, begins by importing necessary Python packages:
+The code, `reddit_live_data.py`, begins by importing necessary Python packages:
 ```
+import praw
+import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 ```
 
-- *NOTE:  If a package does not come pre-installed with Anaconda, you'll need to provide instructions for installing that package here.*
+-Since Praw library does not come preinstalled, we go to command prompt and type - pip install praw
 
-We then import data from [insert name of data source].  We print the data to allow us to verify what we've imported:
-```
-x = [1, 3, 4, 7]
-y = [2, 5, 1, 6]
+- To test if the instance is running correctly, we type in this code, if it returns true, we are getting live data from reddit
 
-for i in range(0,len(x)):
-	print "x[%d] = %f" % (i, x[i])		
 ```
-- *NOTE 1:  This sample code doesn't actually import anything.  You'll need your code to grab live data from an online source.*  
-- *NOTE 2:  You will probably also need to clean/filter/re-structure the raw data.  Be sure to include that step.*
-
-Finally, we visualize the data.  We save our plot as a `.png` image:
-```
-plt.plot(x, y)
-plt.savefig('samplefigure.png')	
-plt.show()
+reddit = praw.Reddit(client_id=ID,client_secret=API,user_agent=user_name)
+print(reddit.read_only)
 ```
 
-The output from this code is shown below:
+### Exploratory Data Analysis
+(Exploratory Data Analysis refers to the process of performing initial investigations on data so as to discover patterns,to spot anomalies,to test hypothesis and to check assumptions with the help of summary statistics and graphical representations)
 
-![Image of Plot](images/samplefigure.png)
+1. In this graph, we can see the total number of comments in the last year in six different subreddits
 
----
+![image](https://user-images.githubusercontent.com/98961650/165673261-a83f5694-9799-47b0-8213-922d5222a812.png)
+
+
+2. Here, we see a scatter plot of the top posts' total number of upvotes and comments in the past year.
+This is a subreddit of Python where the majority of the posts range from 750-1000 comments but there are some outliers like a post with around 800 comments, or 2800 likes
+
+![image](https://user-images.githubusercontent.com/98961650/165672794-48d0f15c-6a3c-4229-a604-9c54183cecca.png)
+
+3. In this bar graph, we compare different subreddits based on their current subscriber count
+
+![image](https://user-images.githubusercontent.com/98961650/165673350-db03fabb-8cd2-46d0-8a4f-3ad959173355.png)
+
+4. Importing an instance of live data to a pandas dataframe
+
+![image](https://user-images.githubusercontent.com/98961650/165689590-3f35603f-b7ad-457f-bb95-09c9dbee1b48.png)
+
+
+5. This is a heatmap of a dataframe containing an instance of live data including subscriber count, upvotes, number of comments etc for a few subreddits
+The heatmap shows data correlation, 
+For example, we can see that the number of upvotes is positively correlated to awards, meaning, the higher the number of upvotes, the higher the number of awards
+
+![image](https://user-images.githubusercontent.com/98961650/165681155-3936fdc3-a335-4161-a4a9-b075b97cfdfb.png)
 
 ## How to Run the Code
-*Provide step-by-step instructions for running the code.  For example, I like to run code from the terminal:*
-1. Open a terminal window.
+- We run the code with ipynb file in a jupyter notebook
+- To pull down some real, live reddit posts ,we need create an account and setup credentials
+- Once setup, we request API credentials, Reddit uses this information to keep track of who is accessing their data, and in what ways they're accessing it.
+- In code,enter client_id,client_secret,username in order to collect data. 
 
-2. Change directories to where `needs_a_good_name.py` is saved.
+![image](https://user-images.githubusercontent.com/98961650/165678215-4dcf472f-aeaf-4d99-a7d9-d703eecd295f.png)
 
-3. Type the following command:
-	```
-	python needs_a_good_name.py
-	```
-
-- *NOTE: You are welcome to provide instructions using Anaconda or IPython.*
+### Praw Library
+To collect, compare, visualize the data, we use praw library.
+The Praw library enables us to use various functions to access different data elements in the reddit app.
 
 ---
 
 ## Suggestions
-*Finally, you should suggest any additional features that would be useful/interesting.  For example, what else could you do with these data?  How might you want to modify the plot to be more descriptive?  What summary statistics might you want to calculate with these data?*
+
+- With this data, we can predict if a comment is negative or positive using keywords and block the comment
+- From the praw library, we can use almost all the features that the app provides, like send a message, ban a person or create a post etc.
+- With these features, we can create bots which can automate tasks like sending welcome messages to a subreddit or sending automatic replies
+
