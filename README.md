@@ -8,6 +8,8 @@ Authors:  Somit Desai , Sumanth Reddy, Vineeth Reddy Tati and Anirudh Varma
 - We import F1 race data in .JSON format. 
 - The data is fetched using requests from [F1 MRD Repo](http://ergast.com/mrd/)  
 - This data is very recent and is updated every race.
+- After fetching the data is cleaned and filtered for better visualization.
+- We then render a graph of the given plot between drivers and their number of podium wins.
 
 ---
 
