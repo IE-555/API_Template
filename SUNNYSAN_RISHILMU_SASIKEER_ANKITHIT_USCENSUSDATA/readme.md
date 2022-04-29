@@ -24,3 +24,6 @@ The above bar graph shows us the statistical data of the states with the most ho
 ![Alt text](/images/fig4.png?raw=true)
 
 The above bar graph shows us the statistical data of the states with the least population. The top five states are Wyoming, Vermont, Columbia, Alaska and North Dakota, with Wyoming being 590K logging the least population within the five states. 
+
+
+Youtube Link: https://youtu.be/l3Pum-GTlcg
